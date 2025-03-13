@@ -61,7 +61,7 @@ function kMeans(sentences, k, maxIterations) {
         iterations++;
     }
 
-    console.log(`iterations: ${iterations}`);
+    // console.log(`iterations: ${iterations}`);
 
     return clusters;
 }
