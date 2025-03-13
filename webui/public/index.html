@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Batch Sentence Tester</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="https://www.equilllabs.com" class="equillabs-logo" target="_blank" rel="noopener noreferrer">
+                <img src="https://raw.githubusercontent.com/jparkerweb/eQuill-Labs/refs/heads/main/src/static/images/logo-text-outline.png" alt="Equill Labs Logo">
+            </a>
+            <div class="top-links">
+                <a href="https://github.com/jparkerweb/k-batch" class="top-link -github" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://ko-fi.com/jparkerweb" class="top-link -support" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"/>
+                    </svg>
+                    Support Me
+                </a>
+            </div>
+
+            <div class="logo-container">
+                <img src="favicon.png" alt="K-Batch Logo" class="logo" height="50">
+                <h1>K-Batch Sentence Tester</h1>
+            </div>
+            <p>Test the functionality of the kBatchSentences algorithm</p>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <form id="batch-form">
+                    <div class="form-group">
+                        <label for="text-input">Enter your text:</label>
+                        <textarea id="text-input" rows="15" placeholder="Enter text here. Each sentence will be processed separately.">As the sun set over the horizon, the sky was painted with hues of orange, pink, and purple, creating a breathtaking view.
+She couldn't believe her eyes when she saw the surprise waiting for her.
+Autumn leaves crunched beneath our feet as we walked through the park.
+She finished the marathon with a personal best time.
+The car honked.
+The waves crashed against the shore, their rhythm calming and constant.
+A gentle breeze rustled the leaves, creating a soothing melody.
+He drank coffee.
+The old clock in the tower had been keeping time for centuries.
+Short.
+The old man shared stories of his youth, his voice filled with nostalgia.
+She smiled brightly.
+She read a book.
+He laughed heartily at the joke, his eyes twinkling with amusement.
+The phone rang.
+Mountains in the distance appeared blue against the clear sky.
+A rainbow appeared after the storm, its colors vibrant and beautiful.
+The aroma of freshly baked bread filled the air, making everyone's mouth water.
+Rain fell softly on the roof.
+The recipe called for ingredients I didn't have in my pantry.
+Stars twinkled brightly in the absence of city lights.
+We ate dinner at eight.
+The dog barked loudly.
+The detective carefully examined each piece of evidence at the scene.
+She found a hidden path in the forest, leading to a secret garden.
+She smiled at his joke.
+They danced under the stars, lost in the magic of the moment.
+The cat sat on the windowsill watching birds fly by.
+The ancient ruins stood as a testament to a civilization long gone, their stories etched in the weathered stones.
+The sun rose slowly, casting a warm glow over the sleepy town.
+Birds chirped outside.
+The quick brown fox jumps over the lazy dog, showcasing its agility and speed in a single bound.</textarea>
+                        <div class="textarea-actions">
+                            <button type="button" id="clear-btn" class="action-btn">Clear</button>
+                            <button type="button" id="paste-btn" class="action-btn">Clear & Paste</button>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <div class="slider-group">
+                            <label for="max-batches">MAX_BATCHES: <span id="max-batches-value">5</span></label>
+                            <input type="range" id="max-batches" min="1" max="10" value="5" step="1">
+                        </div>
+                        
+                        <div class="slider-group">
+                            <label for="min-sentences">MIN_SENTENCES_PER_BATCH: <span id="min-sentences-value">4</span></label>
+                            <input type="range" id="min-sentences" min="1" max="10" value="4" step="1">
+                        </div>
+                        
+                        <div class="slider-group">
+                            <label for="min-required">MIN_SENTENCES_REQUIRED: <span id="min-required-value">10</span></label>
+                            <input type="range" id="min-required" min="5" max="30" value="10" step="1">
+                        </div>
+                        
+                        <div class="slider-group">
+                            <label for="max-iterations">MAX_ITERATIONS: <span id="max-iterations-value">100</span></label>
+                            <input type="range" id="max-iterations" min="1" max="200" value="100" step="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <div class="toggle-container">
+                            <label class="toggle-label" for="split-sentences">
+                                <span>Split Sentences</span>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="split-sentences" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                            </label>
+                            <div class="toggle-description">
+                                If off, new lines in the above text area are used to determine sentence boundries
+                            </div>
+                        </div>
+                        <button type="submit" id="submit-btn">Process Text</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="results-section">
+                <div class="analysis-container">
+                    <h2>Batch Analysis</h2>
+                    <div id="analysis-results">
+                        <p class="placeholder">Analysis will appear here after processing.</p>
+                    </div>
+                </div>
+
+                <div class="results-container">
+                    <h2>Batch Results</h2>
+                    <div id="batch-results">
+                        <p class="placeholder">Results will appear here after processing.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>K-Batch Sentence Batching Tool</p>
+        </footer>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

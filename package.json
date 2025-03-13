@@ -1,0 +1,26 @@
+{
+  "name": "k-batch",
+  "version": "1.0.0",
+  "description": "Intelligent text batching library that uses k-means clustering to group sentences by length for optimal processing.",
+  "type": "module",
+  "main": "k-batch.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "text",
+    "batching",
+    "k-means",
+    "clustering",
+    "optimal processing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jparkerweb/k-batch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jparkerweb/k-batch/issues"
+  }
+}

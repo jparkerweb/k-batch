@@ -1,0 +1,62 @@
+import { kBatchSentences, analyzeKBatches } from './k-batch.js';
+
+const sentences = [
+    "As the sun set over the horizon, the sky was painted with hues of orange, pink, and purple, creating a breathtaking view.",
+    "The recipe called for ingredients I didn't have in my pantry.",
+    "We ate dinner at eight.",
+    "Rain fell softly on the roof.",
+    "Autumn leaves crunched beneath our feet as we walked through the park.",
+    "The ancient ruins stood as a testament to a civilization long gone, their stories etched in the weathered stones.",
+    "The grand ballroom was adorned with chandeliers and elegant decorations, ready to host a night of dancing and celebration.",
+    "The artist's studio was filled with canvases of various sizes, each one a masterpiece in the making.",
+    "Waves crashed against the rocky shore with tremendous force.",
+    "She smiled at his joke.",
+    "The detective carefully examined each piece of evidence at the scene.",
+    "The ancient oak tree provided shade for generations.",
+    "He couldn't remember where he had left his keys.",
+    "In the quiet village, the sound of the church bells ringing signaled the start of a new day.",
+    "Mountains in the distance appeared blue against the clear sky.",
+    "The old clock in the tower had been keeping time for centuries.",
+    "She finished the marathon with a personal best time.",
+    "My grandmother's stories always transported me to another time.",
+    "The concert hall fell silent as the conductor raised his baton.",
+    "The cat sat on the windowsill watching birds fly by.",
+    "She quickly ran up the stairs to catch the departing train.",
+    "In the dense forest, the sound of birds chirping and leaves crunching underfoot created a symphony of nature.",
+    "A small boat drifted aimlessly in the calm harbor waters.",
+    "In the heart of the bustling city, skyscrapers towered above, casting long shadows on the streets below.",
+    "The professor explained the complex theory with remarkable clarity.",
+    "Lightning flashed across the night sky, illuminating the landscape.",
+    "Stars twinkled brightly in the absence of city lights.",
+    "Here is another medium-length sentence.",
+    "As the train sped through the countryside, fields of golden wheat swayed gently in the wind.",
+    "Short.",
+    "The quick brown fox jumps over the lazy dog, showcasing its agility and speed in a single bound.",
+    "The old lighthouse stood tall on the cliff, its beacon guiding ships safely to shore through the fog.",
+    "The dog barked at the passing car.",
+    "The majestic mountains loomed in the distance, their snow-capped peaks glistening in the sunlight.",
+    "A very long sentence that will likely increase the padding significantly if not batched correctly.",
+    "Under the starry night sky, the campfire crackled and popped, providing warmth and light to the group of friends.",
+    "The bustling marketplace was alive with the sounds of vendors calling out their wares and customers haggling for the best prices.",
+    "He tied his shoes quickly.",
+    "Tiny.",
+    "A significantly longer sentence that should be in a different batch.",
+    "Children laughed as they played in the newly fallen snow.",
+    "Birds sang in the morning.",
+    "The museum exhibit featured artifacts from ancient civilizations.",
+    "With a gentle breeze blowing through the trees, the leaves rustled softly, creating a soothing symphony of nature.",
+    "This is a short sentence.",
+    "Fresh bread from the bakery filled the street with its aroma.",
+    "The library was a haven of knowledge, with rows upon rows of books waiting to be explored by curious minds.",
+    "The book fell from the shelf.",
+];
+
+const result = await kBatchSentences(sentences, {
+    maxBatches: 4,
+    minSentencesPerBatch: 5,
+    minSentencesRequired: 10,
+    maxIterations: 100
+});
+console.log(result);
+
+await analyzeKBatches(result);
