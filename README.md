@@ -4,6 +4,11 @@ K-Batch is an intelligent text batching library that uses k-means clustering to 
 
 ![k-batch](https://raw.githubusercontent.com/jparkerweb/k-batch/refs/heads/main/.readme/k-batch.jpg)
 
+#### Maintained by
+<a href="https://www.equilllabs.com">
+  <img src="https://raw.githubusercontent.com/jparkerweb/eQuill-Labs/refs/heads/main/src/static/images/logo-text-outline.png" alt="eQuill Labs" height="32">
+</a>
+
 ## Why K-Batch?
 
 When processing text in batches (especially for machine learning or NLP tasks), grouping sentences of similar length together can:

@@ -1,0 +1,20 @@
+# Directories
+webui/
+node_modules/
+.github/
+docs/
+.readme/
+
+# Files
+.gitignore
+.git
+.env
+.env.*
+package-lock.json
+
+# Misc
+.DS_Store
+Thumbs.db
+*.md
+!README.md
+!LICENSE.md 

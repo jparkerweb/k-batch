@@ -4,8 +4,17 @@
   "description": "Intelligent text batching library that uses k-means clustering to group sentences by length for optimal processing.",
   "type": "module",
   "main": "k-batch.js",
+  "files": [
+    "k-batch.js",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node test.js"
+  },
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/jparkerweb"
   },
   "keywords": [
     "text",
