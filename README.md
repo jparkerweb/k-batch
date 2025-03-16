@@ -155,6 +155,8 @@ npm start
 
 This will start a local server and open the interface in your browser. For more details, see the [Web UI README](webui/README.md).
 
+#### 🌐 Online Demo of the Web UI can be found here: https://k-batch.dyndns.org/
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
