@@ -1,6 +1,6 @@
 {
   "name": "k-batch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Intelligent text batching library that uses k-means clustering to group sentences by length for optimal processing.",
   "type": "module",
   "main": "k-batch.js",
