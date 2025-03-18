@@ -29,24 +29,35 @@ npm install k-batch
 ## Quick Start
 
 ```javascript
-const { kBatchSentences } = require('k-batch');
+import { kBatchSentences, analyzeKBatches } from 'k-batch';
 
 const sentences = [
   "This is a short sentence.",
   "A significantly longer sentence that should be in a different batch.",
   "Tiny.",
   "Here is another medium-length sentence.",
+  "One more sentence to make it interesting.",
+  "And another one to round out the collection.",
+  "Make it interesting.",
+  "And another one to round out the collection.",
+  "wow, this is short.",
+  "Who?",
   // ... more sentences
 ];
 
 // Get optimally batched sentences
-const batches = kBatchSentences(sentences);
+const batches = await kBatchSentences(sentences);
 
 // Use your batches
 batches.forEach((batch, index) => {
   console.log(`Batch ${index + 1}: ${batch.length} sentences`);
+  console.log(batch);
   // Process each batch...
 });
+
+// Get detailed statistics about your batches
+const stats = await analyzeKBatches(batches);
+console.log(stats);
 ```
 
 ## API Reference
@@ -73,11 +84,11 @@ The main function that batches sentences using k-means clustering.
 ### Custom Configuration
 
 ```javascript
-const { kBatchSentences } = require('k-batch');
+import { kBatchSentences } from 'k-batch';
 
 const sentences = [/* your sentences */];
 
-const batches = kBatchSentences(sentences, {
+const batches = await kBatchSentences(sentences, {
   maxBatches: 3,
   minSentencesPerBatch: 5,
   minSentencesRequired: 15,
@@ -88,13 +99,13 @@ const batches = kBatchSentences(sentences, {
 ### Analyzing Batch Statistics
 
 ```javascript
-const { kBatchSentences, analyzeKBatches } = require('k-batch');
+import { kBatchSentences, analyzeKBatches } from 'k-batch';
 
 const sentences = [/* your sentences */];
-const batches = kBatchSentences(sentences);
+const batches = await kBatchSentences(sentences);
 
 // Get detailed statistics about your batches
-const stats = analyzeKBatches(batches);
+const stats = await analyzeKBatches(batches);
 console.log(stats);
 /* Output:
 [
